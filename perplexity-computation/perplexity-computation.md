@@ -36,6 +36,7 @@ A vocabulary of 50,000 words with uniform predictions would give perplexity 50,0
 **Step 1: Extract probabilities for actual tokens**
 
 For each position $i$, find the probability the model assigned to the token that actually occurred:
+
 $$
 p_i = P_i[t_i]
 $$
@@ -43,6 +44,7 @@ $$
 **Step 2: Compute log probabilities**
 
 Take the natural log of each probability:
+
 $$
 \log p_i
 $$
@@ -81,11 +83,13 @@ Position 3 ("sat"): model gave P("sat") = 0.02
 - log(0.02) = -3.912
 
 **Cross-entropy:**
+
 $$
 H = -\frac{1}{3}(-2.303 - 2.996 - 3.912) = \frac{9.211}{3} = 3.07
 $$
 
 **Perplexity:**
+
 $$
 PP = e^{3.07} = 21.5
 $$
@@ -99,11 +103,13 @@ The model has perplexity 21.5 on this sequence. On average, it is as uncertain a
 Perplexity is closely related to information-theoretic quantities:
 
 **Cross-entropy in bits** (using log base 2):
+
 $$
 H_{bits} = -\frac{1}{N} \sum_{i=1}^{N} \log_2 P(w_i)
 $$
 
 **Perplexity:**
+
 $$
 PP = 2^{H_{bits}}
 $$
@@ -163,11 +169,13 @@ Two models with the same perplexity can have very different practical qualities.
 Computing products of many small probabilities can underflow. Always work in log space:
 
 **Unstable:**
+
 $$
 PP = \left(\prod_i p_i\right)^{-1/N}
 $$
 
 **Stable:**
+
 $$
 PP = \exp\left(-\frac{1}{N} \sum_i \log p_i\right)
 $$
