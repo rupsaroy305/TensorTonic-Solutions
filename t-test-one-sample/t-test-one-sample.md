@@ -185,16 +185,19 @@ For one-tailed tests, use $\alpha$ instead of $\alpha/2$.
 The p-value is the probability of observing a t-statistic at least as extreme as the calculated value, assuming $H_0$ is true.
 
 **Two-tailed test:**
+
 $$
 \text{p-value} = 2 \times P(T > |t|)
 $$
 
 **One-tailed test (right):**
+
 $$
 \text{p-value} = P(T > t)
 $$
 
 **One-tailed test (left):**
+
 $$
 \text{p-value} = P(T < t)
 $$
