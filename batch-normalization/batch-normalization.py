@@ -1,13 +1,16 @@
 import numpy as np
 
-def batch_norm_forward(x, gamma, beta, eps=1e-5):
-    x=np.asarray(x,dtype=float)
-    gamma=np.asarray(gamma,dtype=float)
-    beta=np.asarray(beta,dtype=float)
-    if x.ndim==2:
-        m=x.mean(0);v=((x-m)**2).mean(0)
-        return gamma*(x-m)/np.sqrt(v+eps)+beta
-    if x.ndim==4:
-        m=x.mean((0,2,3),keepdims=True);v=((x-m)**2).mean((0,2,3),keepdims=True)
-        return gamma.reshape(1,-1,1,1)*(x-m)/np.sqrt(v+eps)+beta.reshape(1,-1,1,1)
-    raise ValueError()
+def batch_norm_forward(x: list, gamma: list, beta: list, eps: float = 1e-5) -> np.ndarray:
+    x = np.asarray(x, dtype=float)
+    gamma = np.asarray(gamma)
+    beta = np.asarray(beta)
+
+    if x.ndim == 2:
+        mean = np.mean(x, axis=0)
+        var = np.mean((x - mean) ** 2, axis=0)
+        return gamma * (x - mean) / np.sqrt(var + eps) + beta
+
+    mean = np.mean(x, axis=(0, 2, 3), keepdims=True)
+    var = np.mean((x - mean) ** 2, axis=(0, 2, 3), keepdims=True)
+
+    return gamma.reshape(1, -1, 1, 1) * (x - mean) / np.sqrt(var + eps) + beta.reshape(1, -1, 1, 1)

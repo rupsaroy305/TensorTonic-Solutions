@@ -53,21 +53,25 @@ Pure normalization (forcing mean=0, variance=1) might limit what the layer can r
 **Input:** Mini-batch of activations $x$ with shape (batch_size, features)
 
 **Step 1: Compute batch mean**
+
 $$
 \mu_B = \frac{1}{m} \sum_{i=1}^{m} x_i
 $$
 
 **Step 2: Compute batch variance**
+
 $$
 \sigma_B^2 = \frac{1}{m} \sum_{i=1}^{m} (x_i - \mu_B)^2
 $$
 
 **Step 3: Normalize**
+
 $$
 \hat{x}_i = \frac{x_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}
 $$
 
 **Step 4: Scale and shift**
+
 $$
 y_i = \gamma \hat{x}_i + \beta
 $$
@@ -215,6 +219,7 @@ Non-learnable (tracking only):
 Backpropagation through BatchNorm is more complex than regular layers because each output depends on all inputs in the batch (through $\mu_B$ and $\sigma_B^2$).
 
 The gradients are:
+
 $$
 \frac{\partial L}{\partial \gamma} = \sum_i \frac{\partial L}{\partial y_i} \hat{x}_i
 $$
