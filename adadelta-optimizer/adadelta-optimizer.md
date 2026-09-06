@@ -107,6 +107,7 @@ For the first update:
 - So $\text{RMS}[\Delta w]_0 = \sqrt{0 + \epsilon} = \sqrt{\epsilon}$
 
 The first update is approximately:
+
 $$
 \Delta w_1 \approx -\frac{\sqrt{\epsilon}}{\sqrt{(1-\rho) g_1^2 + \epsilon}} \cdot g_1
 $$
