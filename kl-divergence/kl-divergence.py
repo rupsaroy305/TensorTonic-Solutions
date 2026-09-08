@@ -1,6 +1,9 @@
 import numpy as np
 
-def kl_divergence(p, q, eps=1e-12):
-    p=np.asarray(p,float)
-    q=np.asarray(q,float)+eps
-    return float(np.sum(np.where(p>0,p*np.log(p/q),0.0)))
+def kl_divergence(p: list, q: list, eps: float = 1e-12) -> float:
+    p = np.array(p, dtype=float)
+    q = np.array(q, dtype=float)
+    mask = p > 0
+    p = p[mask]
+    q = np.maximum(q[mask], eps)
+    return float(np.sum(p * np.log(p / q)))

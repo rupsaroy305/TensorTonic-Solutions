@@ -32,12 +32,14 @@ Breaking down $P(x) \log \frac{P(x)}{Q(x)}$:
 ## Key Properties of KL Divergence
 
 **Non-negativity:**
+
 $$
 D_{KL}(P || Q) \geq 0
 $$
 With equality if and only if $P = Q$ everywhere.
 
 **Asymmetry:**
+
 $$
 D_{KL}(P || Q) \neq D_{KL}(Q || P)
 $$
