@@ -1,16 +1,13 @@
 import numpy as np
 
-def pearson_correlation(X):
-    try:
-        X=np.asarray(X,float)
-        if X.ndim!=2 or X.shape[0]<2:return None
-        X=X-X.mean(0)
-        C=X.T@X/(X.shape[0]-1)
-        s=np.sqrt(np.diag(C))
-        R=C/np.outer(s,s)
-        z=s==0
-        if z.any():
-            R[z,:]=R[:,z]=np.nan
-        return R
-    except:
-        return None
+def pearson_correlation(X: list) -> np.ndarray:
+    X = np.array(X, dtype=float)
+
+    cov = np.cov(X, rowvar=False)
+    std = np.std(X, axis=0, ddof=1)
+
+    corr = cov / np.outer(std, std)
+    corr[:, std == 0] = np.nan
+    corr[std == 0, :] = np.nan
+
+    return corr
