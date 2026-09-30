@@ -100,6 +100,7 @@ Alternatively, create a lower triangular matrix of 1s (valid positions) and conv
 **Example for seq_len = 4:**
 
 Upper triangular (what to mask):
+
 $$
 \begin{bmatrix}
 0 & 1 & 1 & 1 \\
@@ -110,6 +111,7 @@ $$
 $$
 
 Multiply by $-\infty$:
+
 $$
 \begin{bmatrix}
 0 & -\infty & -\infty & -\infty \\
