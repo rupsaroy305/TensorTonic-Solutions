@@ -17,6 +17,7 @@ This has several problems:
 $$
 v_t = \mu \cdot v_{t-1} + \eta \cdot g_t
 $$
+
 $$
 w_t = w_{t-1} - v_t
 $$
@@ -59,6 +60,7 @@ Nesterov Accelerated Gradient (NAG), proposed by Yurii Nesterov in 1983, has an 
 The algorithm:
 
 **Step 1**: Compute the **look-ahead position** (where momentum would take you):
+
 $$
 w_{\text{look}} = w_{t-1} - \mu \cdot v_{t-1}
 $$
@@ -66,6 +68,7 @@ $$
 This is not an update. It is a hypothetical: "if I just applied my current velocity, where would I end up?"
 
 **Step 2**: Compute the gradient at the **look-ahead position**:
+
 $$
 g_{\text{look}} = g(w_{\text{look}})
 $$
@@ -73,11 +76,13 @@ $$
 Instead of asking "what is the gradient here?", we ask "what is the gradient **there** (where I am heading)?"
 
 **Step 3**: Update velocity using this look-ahead gradient:
+
 $$
 v_t = \mu \cdot v_{t-1} + \eta \cdot g_{\text{look}}
 $$
 
 **Step 4**: Update parameters:
+
 $$
 w_t = w_{t-1} - v_t
 $$
