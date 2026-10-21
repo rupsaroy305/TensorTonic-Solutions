@@ -71,11 +71,13 @@ Calculations:
 - $\sum g_i = 1 + 1 + 0 + 0 = 2$
 
 Dice coefficient:
+
 $$
 \text{Dice} = \frac{2 \times 1.6}{1.9 + 2} = \frac{3.2}{3.9} \approx 0.82
 $$
 
 Dice loss:
+
 $$
 \text{Loss} = 1 - 0.82 = 0.18
 $$
@@ -125,6 +127,7 @@ $$
 $$
 
 Relationship to Dice:
+
 $$
 \text{Dice} = \frac{2 \cdot \text{IoU}}{1 + \text{IoU}}
 $$
