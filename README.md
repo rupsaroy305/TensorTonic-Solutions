@@ -135,7 +135,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Implement Softmax Function | Implement numerically stable softmax by shifting logits before exponentiation and normalizing probabilities. | https://www.tensortonic.com/problems/softmax-function |
 | Stratified Train/Test Split | Split indices into train and test sets while approximately preserving the class distribution of each label. | https://www.tensortonic.com/problems/stratified-split |
 | Streaming Min-Max Normalization | Update per-feature running minima and maxima, then normalize each incoming numeric batch with the new state. | https://www.tensortonic.com/problems/streaming-minmax |
-| Implement Swish Activation | Apply the Swish activation element-wise by multiplying each input by its sigmoid value. | https://www.tensortonic.com/problems/swish-activation |
+| Implement Swish Activation | Apply the Swish activation element-wise in NumPy by multiplying each input by its sigmoid, computed without overflow. | https://www.tensortonic.com/problems/swish-activation |
 | One-Sample t-Test | Compute a one-sample t-statistic in NumPy using the sample mean, Bessel-corrected deviation, and hypothesized mean. | https://www.tensortonic.com/problems/t-test-one-sample |
 | Implement Tanh Activation | Implement the hyperbolic tangent activation element-wise with outputs bounded between minus one and one. | https://www.tensortonic.com/problems/tanh-activation |
 | Target Encoding | Encode each categorical value with the mean target observed for its category while preserving row order. | https://www.tensortonic.com/problems/target-encoding |
@@ -190,6 +190,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Complete U-Net Network | Assemble U-Net encoder, bottleneck, decoder, skip-connection, and output stages while tracking valid-convolution shapes. | https://www.tensortonic.com/research/unet/unet-full-network |
 | U-Net Output Layer | Implement the U-Net output layer as a 1x1 channel projection that maps decoder features to per-pixel class logits. | https://www.tensortonic.com/research/unet/unet-output-layer |
 | U-Net Skip Connections | Implement U-Net skip connections by center-cropping encoder features and concatenating them with decoder features. | https://www.tensortonic.com/research/unet/unet-skip-connection |
+| VAE Encoder | Implement a variational autoencoder encoder that maps inputs to separate latent mean and log-variance vectors. | https://www.tensortonic.com/research/vae/vae-encoder |
 | CBOW Forward Pass | Implement the Word2Vec CBOW forward pass by averaging context embeddings and producing vocabulary logits. | https://www.tensortonic.com/research/word2vec/word2vec-cbow-forward |
 | Negative Sampling Distribution | Build the Word2Vec negative-sampling distribution from unigram counts raised to the three-quarter power. | https://www.tensortonic.com/research/word2vec/word2vec-noise-dist |
 | Skip-gram Negative Sampling Loss | Implement skip-gram negative-sampling loss from center, positive-context, and negative-word embedding scores. | https://www.tensortonic.com/research/word2vec/word2vec-sgns-loss |
